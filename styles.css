@@ -1,0 +1,25 @@
+body {
+    color: #4D2C1D
+}
+
+#star-filled {
+    color: #97704F
+}
+
+#linkedIn {
+    color: #DEAF81;
+    opacity: 0.4;
+}
+
+#linkedIn:hover {
+    cursor: pointer;
+} 
+
+#github {
+    color: #DEAF81;
+    opacity: 0.4;
+}
+
+#github:hover {
+    cursor: pointer;
+}
