@@ -1,13 +1,75 @@
-body {
-    color: #4D2C1D
+:root {
+    --dark-brown: #4D2C1D;
+    --medium-brown: #97704F;
+    --light-brown: #DEAF81;
 }
 
+body {
+    color: var(--dark-brown);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* SPLIT CONTENT INTO TWO HALVES */
+
+#static-content {
+    grid-area: static;
+    margin-right: 1rem;
+    padding: 1rem;
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#dynamic-content {
+    grid-area: dynamic;
+    padding: 1rem;
+    margin-left: 1rem;;
+    background-color: green;
+}
+
+#content {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "static dynamic";
+}
+
+.separator-line {
+    border-left: 3px solid var(--dark-brown);
+    border-radius: 2px;
+    height: 75vh;
+    position: absolute;
+    left: 50%;
+    top: 12.5%
+}
+
+/* STATIC CONTENT ALGINMENT */
+
+
+#static-content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: blue;
+}
+
+
+
+/* STYLE ICONS */
+
 #star-filled {
-    color: #97704F
+    color: var(--medium-brown)
 }
 
 #linkedIn {
-    color: #DEAF81;
+    color: var(--light-brown);
     opacity: 0.4;
 }
 
@@ -16,7 +78,7 @@ body {
 } 
 
 #github {
-    color: #DEAF81;
+    color: var(--light-brown);
     opacity: 0.4;
 }
 
