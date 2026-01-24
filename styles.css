@@ -29,6 +29,16 @@ body {
     padding: 1rem;
     margin-left: 1rem;;
     background-color: green;
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+        "dynamic-header"
+        "dynamic-body";
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow: auto;
 }
 
 #content {
@@ -49,15 +59,44 @@ body {
     top: 12.5%
 }
 
+
+
 /* STATIC CONTENT ALGINMENT */
 
+.static-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-#static-content-row {
+#photo-socials-col {
+    align-items: center;
+}
+
+#socials-icons {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: blue;
+}
+
+.name-header {
+    padding-left: 0;
+    text-align: left;
+}
+
+
+/* DYNAMIC CONTENT ALIGNMENT */
+
+#dynamic-header {
+    grid-area: dynamic-header;
+    background-color: yellow;
+    text-align: center;
+}
+
+#dynamic-body {
+    grid-area: dynamic-body;
+    background-color: gray;
 }
 
 
