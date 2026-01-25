@@ -17,7 +17,6 @@ body {
     grid-area: static;
     margin-right: 1rem;
     padding: 1rem;
-    background-color: red;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -103,6 +102,11 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 50%;
+}
+
+.image-wrapper {
+    width: 16rem;
 }
 
 
@@ -115,6 +119,9 @@ img {
 #linkedIn {
     color: var(--light-brown);
     opacity: 0.4;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
 }
 
 #linkedIn:hover {
@@ -124,6 +131,9 @@ img {
 #github {
     color: var(--light-brown);
     opacity: 0.4;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
 }
 
 #github:hover {
