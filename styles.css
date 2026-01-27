@@ -94,7 +94,7 @@ body {
 
 /* DYNAMIC CONTENT ALIGNMENT */
 
-#dynamic-header {
+#dynamic-header-div {
     grid-area: dynamic-header;
     text-align: center;
 }
@@ -125,6 +125,12 @@ body {
     cursor: pointer;
 }
 
+.nav-item svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
 
 /* ELEMENT STYLING */
 img {
@@ -150,13 +156,13 @@ a:hover {
 
 /* STYLE ICONS */
 
-#star-filled {
+.star-filled {
     color: var(--medium-brown);
     width: 1.5rem;
     height: 1.5rem;
 }
 
-#star-open {
+.star-open {
     stroke: var(--medium-brown);
     color: white;
     width: 1.5rem;
