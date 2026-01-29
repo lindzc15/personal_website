@@ -96,12 +96,3 @@ function displayDynamicContent() {
         }
     }
 }
-
-
-function submitForm() {
-    // if reloading from form submit, keep on contact page, display success message, and clear form inputs
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("submitted")) {
-        window.alert("yayy submit");
-    }
-}
