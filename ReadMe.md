@@ -10,4 +10,4 @@ A basic portfolio website built to show my skills, experience, and education
 
 ## How to Run
 1. Clone the repo
-2. Open 'index.html' in your browser
+2. Run with `npx serve .`
