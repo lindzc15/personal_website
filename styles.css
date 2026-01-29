@@ -184,7 +184,6 @@ button:hover {
 }
 
 
-
 /* NAV STYLING */
 
 #nav-items {
@@ -250,6 +249,25 @@ a:hover {
     margin-top: 0px;
 }
 
+#success-alert-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#success-alert {
+    text-align: center;
+    height: 2rem;
+    width: 8rem;
+    border-radius: 8px;
+    background-color: var(--light-brown-opaque);
+    color: var(--dark-brown);
+    border: none;
+    padding-top: 0.5rem;
+    visibility: hidden;
+}
+
 
 /* STYLE ICONS */
 
@@ -303,7 +321,7 @@ a:hover {
     height: 1rem;
 }
 
-
+/* FOR PHONES, SWITCH TO VERTICALLY STACKED LAYOUT */
 @media screen and (max-width: 784px) {
     #content {
         display: grid;
@@ -316,7 +334,6 @@ a:hover {
         overflow-y: auto;
     }
 
-
     .separator-line {
         border-top: 3px solid var(--dark-brown);
         border-radius: 2px;
@@ -327,6 +344,8 @@ a:hover {
         margin-bottom: 2rem;
     }
 } 
+
+/* FOR LARGER SCREENS, SET SEPARATOR BETWEEN MAIN COLUMNS */
 
 @media screen and (min-width: 785px) {
     .separator-line {

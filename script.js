@@ -1,5 +1,6 @@
-// on load, display dynamic content based on default selected nav item
+// on load, display dynamic necessary content
 document.addEventListener("DOMContentLoaded", (event) => {
+    // hide star icons
     const emptyStars = document.getElementsByClassName("star-open");
     for (const star of emptyStars) {
         star.style.opacity = "0";
@@ -7,14 +8,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const params = new URLSearchParams(window.location.search);
 
-    // if page is reloading due to form submission, stay on contact page, display success message
+    // if page is reloading due to form submission, stay on contact page, display success message for 2 seconds
     if (params.get("submitted") === "true") {
         const contactNav = document.getElementById("contact")
         setActiveNav(contactNav);
-
+        
+        const successMsg = document.getElementById("success-alert");
+        successMsg.style.visibility = "visible";
+        setTimeout(() => {
+            successMsg.style.visibility = "hidden";
+        }, 2000);
+        
         window.history.replaceState({}, document.title, window.location.pathname);
 
     }
+    // on load/reload not due to submission, set default active nav to about page
     else {
         const aboutNav = document.getElementById("about")
         setActiveNav(aboutNav);
@@ -44,7 +52,7 @@ function showOpenStar(e) {
     }
 }
 
-// When mouse stops hovering nav item, hide open star icon, unless it's the active nav item
+// when mouse stops hovering nav item, hide open star icon, unless it's the active nav item
 function hideOpenStar(e) {
     const classes = e.classList
 
