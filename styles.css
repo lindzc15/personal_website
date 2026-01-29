@@ -260,6 +260,11 @@ a:hover {
     opacity: 0;
 }
 
+#about-p {
+    line-height: 2;
+    text-indent: 1.5rem;
+}
+
 .star-open {
     stroke: var(--medium-brown);
     color: white;
