@@ -3,6 +3,7 @@
     --medium-brown: #97704F;
     --light-brown: #DEAF81;
     --light-brown-opaque: #DEAF8166;
+    --dark-brown-opaque: #4D2C1D66;
 }
 
 body {
@@ -11,6 +12,11 @@ body {
     padding: 0;
     height: 100%;
 }
+
+.body-content {
+  display: none;
+}
+
 
 /* SPLIT CONTENT INTO TWO HALVES */
 
@@ -26,7 +32,7 @@ body {
 #dynamic-content {
     grid-area: dynamic;
     padding: 1rem;
-    margin-left: 1rem;;
+    margin-left: 3rem;;
     display: grid;
     height: 90vh;
     grid-template-columns: 1fr;
@@ -47,16 +53,6 @@ body {
     grid-template-areas: 
         "static dynamic";
 }
-
-.separator-line {
-    border-left: 3px solid var(--dark-brown);
-    border-radius: 2px;
-    height: 75vh;
-    position: absolute;
-    left: 50%;
-    top: 12.5%
-}
-
 
 
 /* STATIC CONTENT ALGINMENT */
@@ -145,6 +141,50 @@ body {
     margin-bottom: 4rem;
 }
 
+label {
+  display: block; 
+  margin-bottom: 1rem; 
+  font-weight: bold;
+}
+
+input, textarea {
+  display: block; 
+  width: 50%; 
+  height: 2rem;
+  margin-bottom: 3rem;
+}
+
+textarea {
+    height: 12rem;
+    width: 100%;
+    resize: none;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+#form-btn-div {
+    align-self: center;
+    text-align: center;
+}
+
+button {
+    height: 2rem;
+    width: 8rem;
+    border-radius: 8px;
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    box-shadow: 2px 2px 6px var(--dark-brown-opaque);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+
 /* NAV STYLING */
 
 #nav-items {
@@ -179,6 +219,7 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
+  box-shadow: 4px 4px 8px var(--dark-brown-opaque);
 }
 
 .image-wrapper {
@@ -216,6 +257,7 @@ a:hover {
     color: var(--medium-brown);
     width: 1.5rem;
     height: 1.5rem;
+    opacity: 0;
 }
 
 .star-open {
@@ -223,6 +265,7 @@ a:hover {
     color: white;
     width: 1.5rem;
     height: 1.5rem;
+    opacity: 0;
 }
 
 #linkedIn {
@@ -254,3 +297,40 @@ a:hover {
     width: 1rem;
     height: 1rem;
 }
+
+
+@media screen and (max-width: 784px) {
+    #content {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "static"
+            "dynamic";
+        overflow-y: auto;
+    }
+
+
+    .separator-line {
+        border-top: 3px solid var(--dark-brown);
+        border-radius: 2px;
+        width: 75vw;
+        position: relative;
+        top: 10%;
+        left: 12.5%;
+        margin-bottom: 2rem;
+    }
+} 
+
+@media screen and (min-width: 785px) {
+    .separator-line {
+        border-left: 3px solid var(--dark-brown);
+        border-radius: 2px;
+        height: 75vh;
+        position: absolute;
+        left: 50%;
+        top: 12.5%
+    }
+}
+

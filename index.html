@@ -59,7 +59,15 @@
                             </svg>
                     </div>
                 </div>
-                <a >Resume PDF</a>
+                <div class="link-item">
+                    <p>Resume PDF</p>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            viewBox="0 0 24 24"
+                            class="external-link">
+                            <path fill="currentColor" d="M9.367 2.25H9.4a.75.75 0 0 1 0 1.5c-1.132 0-1.937 0-2.566.052c-.62.05-1.005.147-1.31.302a3.25 3.25 0 0 0-1.42 1.42c-.155.305-.251.69-.302 1.31c-.051.63-.052 1.434-.052 2.566v5.2c0 1.133 0 1.937.052 2.566c.05.62.147 1.005.302 1.31a3.25 3.25 0 0 0 1.42 1.42c.305.155.69.251 1.31.302c.63.051 1.434.052 2.566.052h5.2c1.133 0 1.937 0 2.566-.052c.62-.05 1.005-.147 1.31-.302a3.25 3.25 0 0 0 1.42-1.42c.155-.305.251-.69.302-1.31c.051-.63.052-1.434.052-2.566v-1.1a.75.75 0 0 1 1.5 0v1.133c0 1.092 0 1.958-.057 2.655c-.058.714-.18 1.317-.46 1.869a4.75 4.75 0 0 1-2.076 2.075c-.552.281-1.155.403-1.869.461c-.697.057-1.563.057-2.655.057H9.367c-1.092 0-1.958 0-2.655-.057c-.714-.058-1.317-.18-1.868-.46a4.75 4.75 0 0 1-2.076-2.076c-.281-.552-.403-1.155-.461-1.869c-.057-.697-.057-1.563-.057-2.655V9.367c0-1.092 0-1.958.057-2.655c.058-.714.18-1.317.46-1.868a4.75 4.75 0 0 1 2.077-2.076c.55-.281 1.154-.403 1.868-.461c.697-.057 1.563-.057 2.655-.057M13.5 3a.75.75 0 0 1 .75-.75H21a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0V4.81l-6.97 6.97a.75.75 0 1 1-1.06-1.06l6.97-6.97h-4.94A.75.75 0 0 1 13.5 3"/>
+                        </svg>
+                </div>
             </div>
             
                 <div class="static-column" id="name-nav-col">
@@ -162,9 +170,9 @@
                     </div>
                 </div>
             </div>
+            <div class="separator-line"> </div>
         </div>
 
-        <div class="separator-line"> </div>
 
         <div id="dynamic-content">
             <div id="dynamic-header-div">
@@ -447,7 +455,24 @@
                     </div>
                 </div>
                 <div class="body-content" id="contact-body">
-                    contact body
+                    <form onsubmit="submitForm(event)" name="contact" method="POST" data-netlify="true" action="./index.html?submitted=true">
+                        <input type="hidden" name="subject"
+                        value="Sales inquiry from mysitename.netlify.app" />
+                        <div>
+                            <label for="name">Your Name: </label>
+                            <input type="text" name="name" id="name" />
+                        <div>
+                            <label for="email">Your Email:</label>
+                            <input type="email" name="email" id="email"/>
+                        </div>
+                        <div>
+                            <label for="message">Message: </label>
+                            <textarea name="message" id="message"></textarea>
+                        </div>
+                        <div id="form-btn-div">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

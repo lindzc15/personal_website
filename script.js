@@ -2,10 +2,23 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     const emptyStars = document.getElementsByClassName("star-open");
     for (const star of emptyStars) {
-        star.style.visibility = "hidden";
+        star.style.opacity = "0";
     }
 
-    displayDynamicContent()
+    const params = new URLSearchParams(window.location.search);
+
+    // if page is reloading due to form submission, stay on contact page, display success message
+    if (params.get("submitted") === "true") {
+        const contactNav = document.getElementById("contact")
+        setActiveNav(contactNav);
+
+        window.history.replaceState({}, document.title, window.location.pathname);
+
+    }
+    else {
+        const aboutNav = document.getElementById("about")
+        setActiveNav(aboutNav);
+    }
 });
 
 // open linked in profile in new tab
@@ -27,7 +40,7 @@ function showOpenStar(e) {
 
         navStar.classList.remove("star-filled");
         navStar.classList.add("star-open")
-        navStar.style.visibility = "visible";
+        navStar.style.opacity = "1";
     }
 }
 
@@ -38,7 +51,7 @@ function hideOpenStar(e) {
     if (!classes.contains("active")) {
         const navStar = document.getElementById(`star-${e.id}`);
 
-        navStar.style.visibility = "hidden";
+        navStar.style.opacity = "0";
     }
 }
 
@@ -51,14 +64,14 @@ function setActiveNav(e) {
         const navStar = document.getElementById(`star-${nav.id}`);
         navStar.classList.remove("star-open");
         navStar.classList.remove("star-filled");
-        navStar.style.visibility = "hidden";
+        navStar.style.opacity = "0";
     }
 
     e.classList.add("active");
     const navStar = document.getElementById(`star-${e.id}`);
     navStar.classList.remove("star-open");
     navStar.classList.add("star-filled");
-    navStar.style.visibility = "visible";
+    navStar.style.opacity = "1";
     
     const dynamicHeader = document.getElementById("dynamic-header");
     dynamicHeader.innerText = e.innerText;
@@ -81,5 +94,14 @@ function displayDynamicContent() {
         else {
             content.style.display = "none";
         }
+    }
+}
+
+
+function submitForm() {
+    // if reloading from form submit, keep on contact page, display success message, and clear form inputs
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("submitted")) {
+        window.alert("yayy submit");
     }
 }
