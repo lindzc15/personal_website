@@ -237,7 +237,7 @@ a:hover {
 
 .tag {
     background-color: var(--light-brown-opaque);
-    padding: 0.25rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
     border-radius: 10px;
 }
 
