@@ -2,6 +2,7 @@
     --dark-brown: #4D2C1D;
     --medium-brown: #97704F;
     --light-brown: #DEAF81;
+    --light-brown-opaque: #DEAF8166;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
     display: grid;
     height: 90vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 6fr;
     grid-template-areas: 
         "dynamic-header"
         "dynamic-body";
@@ -103,6 +104,47 @@ body {
     grid-area: dynamic-body;
 }
 
+.sub-header {
+    margin-top: 2rem;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sub-container {
+    margin-left: 1rem;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.link-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    column-gap: 4px;
+}
+
+.link-item {
+    cursor: pointer
+}
+
+.project-container {
+    margin-bottom: 4rem;
+}
+
 /* NAV STYLING */
 
 #nav-items {
@@ -153,6 +195,20 @@ a:hover {
     cursor: pointer;
 }
 
+.tag {
+    background-color: var(--light-brown-opaque);
+    padding: 0.25rem;
+    border-radius: 10px;
+}
+
+.project-header {
+    margin-bottom: 0px;
+}
+
+.content-p {
+    margin-top: 0px;
+}
+
 
 /* STYLE ICONS */
 
@@ -191,4 +247,10 @@ a:hover {
 
 #github:hover {
     cursor: pointer;
+}
+
+.external-link {
+    color: var(--light-brown);
+    width: 1rem;
+    height: 1rem;
 }

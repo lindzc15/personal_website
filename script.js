@@ -1,37 +1,24 @@
-//1. comments
-//2. functions for resused code snippets (setting body)
+// on load, display dynamic content based on default selected nav item
 document.addEventListener("DOMContentLoaded", (event) => {
     const emptyStars = document.getElementsByClassName("star-open");
     for (const star of emptyStars) {
         star.style.visibility = "hidden";
     }
 
-    const active = document.getElementsByClassName("active")
-    const dynamicHeader = document.getElementById("dynamic-header");
-    dynamicHeader.innerText = active[0].innerText;
-
-    const bodyContentElements = document.getElementsByClassName("body-content");
-    for (const content of bodyContentElements) {
-        if(content.id == `${active[0].id}-body`) {
-            content.style.display = "block";
-        }
-        else {
-            content.style.display = "none";
-        }
-    }
-    
+    displayDynamicContent()
 });
 
-
+// open linked in profile in new tab
 function visitLinkedIn() {
     window.open('https://www.linkedin.com/in/lindzey-coonradt-2530902b8', '_blank')
 }
 
+// open github profile in new tab
 function visitGithub() {
     window.open('https://github.com/lindzc15', '_blank')
 }
 
-//Displays open star next to nav item hovered on, unless it's the active nav item
+// displays open star next to nav item hovered on, unless it's the active nav item
 function showOpenStar(e) {
     const classes = e.classList
 
@@ -55,7 +42,7 @@ function hideOpenStar(e) {
     }
 }
 
-// Change the active nav item, display correct star icon, and change dynamic content
+// change the active nav item, display correct star icon, and change dynamic content (header and body)
 function setActiveNav(e) {
     const navItems = document.getElementsByClassName("nav-item");
 
@@ -76,9 +63,19 @@ function setActiveNav(e) {
     const dynamicHeader = document.getElementById("dynamic-header");
     dynamicHeader.innerText = e.innerText;
 
+    displayDynamicContent();
+}
+
+
+// displays the appropriate body content based on active nav item
+function displayDynamicContent() {
+    const active = document.getElementsByClassName("active")
+    const dynamicHeader = document.getElementById("dynamic-header");
+    dynamicHeader.innerText = active[0].innerText;
+
     const bodyContentElements = document.getElementsByClassName("body-content");
     for (const content of bodyContentElements) {
-        if(content.id == `${e.id}-body`) {
+        if(content.id == `${active[0].id}-body`) {
             content.style.display = "block";
         }
         else {
