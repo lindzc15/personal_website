@@ -339,6 +339,7 @@ a:hover {
         height: auto;  
         overflow: visible;
         margin-left: 0;
+        grid-template-rows: auto 1fr;
     }
 
     p {
