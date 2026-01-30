@@ -177,6 +177,8 @@ button {
     background-color: var(--light-brown);
     color: var(--dark-brown);
     box-shadow: 2px 2px 6px var(--dark-brown-opaque);
+    font-weight: bold;
+    border: 1px solid var(--dark-brown)
 }
 
 button:hover {
@@ -325,13 +327,26 @@ a:hover {
 @media screen and (max-width: 784px) {
     #content {
         display: grid;
-        height: 100vh;
+        height: auto;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr auto;
         grid-template-areas: 
             "static"
             "dynamic";
-        overflow-y: auto;
+    }
+
+    #dynamic-content {
+        height: auto;  
+        overflow: visible;
+        margin-left: 0;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    #content {
+        height: auto;
     }
 
     .separator-line {
@@ -342,6 +357,18 @@ a:hover {
         top: 10%;
         left: 12.5%;
         margin-bottom: 2rem;
+    }
+
+    #dynamic-content {
+        margin-left: 0px;
+    }
+
+    #static-content {
+        margin-right: 0px;
+    }
+
+    #static-body {
+        column-gap: 1.25rem;
     }
 } 
 
@@ -356,5 +383,6 @@ a:hover {
         left: 50%;
         top: 12.5%
     }
+
 }
 
