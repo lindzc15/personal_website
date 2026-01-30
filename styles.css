@@ -11,11 +11,29 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .body-content {
   display: none;
 }
+
+/* FONT STYLING */
+
+h1, h2, h3, h4, h5 {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ .body-text {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-style: normal;
+}
+
+
 
 
 /* SPLIT CONTENT INTO TWO HALVES */
@@ -202,6 +220,7 @@ button:hover {
     justify-content: start;
     align-items: center;
     column-gap: 0.5rem;
+    font-weight: bold;
 }
 
 .nav-item:hover {
