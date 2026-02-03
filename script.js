@@ -29,15 +29,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 });
 
-// open linked in profile in new tab
-function visitLinkedIn() {
-    window.open('https://www.linkedin.com/in/lindzey-coonradt-2530902b8', '_blank')
-}
-
-// open github profile in new tab
-function visitGithub() {
-    window.open('https://github.com/lindzc15', '_blank')
-}
 
 // displays open star next to nav item hovered on, unless it's the active nav item
 function showOpenStar(e) {
@@ -79,10 +70,7 @@ function setActiveNav(e) {
     const navStar = document.getElementById(`star-${e.id}`);
     navStar.classList.remove("star-open");
     navStar.classList.add("star-filled");
-    navStar.style.opacity = "1";
-    
-    const dynamicHeader = document.getElementById("dynamic-header");
-    dynamicHeader.innerText = e.innerText;
+    navStar.style.opacity = "1";  
 
     displayDynamicContent();
 }
@@ -91,8 +79,17 @@ function setActiveNav(e) {
 // displays the appropriate body content based on active nav item
 function displayDynamicContent() {
     const active = document.getElementsByClassName("active")
+
     const dynamicHeader = document.getElementById("dynamic-header");
-    dynamicHeader.innerText = active[0].innerText;
+    const overflowHeader = document.getElementById("dynamic-header-overflow");
+    if (active[0].innerText == "Education & Certifications") {
+        dynamicHeader.innerText = "Education &";
+        overflowHeader.innerText = "Certifications"
+    }
+    else {
+        dynamicHeader.innerText = active[0].innerText;
+        overflowHeader.innerText = "";
+    }
 
     const bodyContentElements = document.getElementsByClassName("body-content");
     for (const content of bodyContentElements) {
@@ -104,3 +101,6 @@ function displayDynamicContent() {
         }
     }
 }
+
+
+
