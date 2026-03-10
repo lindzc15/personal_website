@@ -100,10 +100,14 @@ h1, h2, h3, h4, h5 {
     align-items: center;
 }
 
-.name-header {
+.name-header, .prof-title{
     padding-left: 0;
     text-align: left;
     align-self: center;
+}
+
+.prof-title {
+    margin-top: 0px;
 }
 
 
@@ -267,6 +271,10 @@ a:hover {
 }
 
 .content-p {
+    margin-top: 0px;
+}
+
+.desc-list {
     margin-top: 0px;
 }
 
