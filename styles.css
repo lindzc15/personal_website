@@ -152,7 +152,8 @@ h1, h2, h3, h4, h5 {
     flex-wrap: nowrap;
     align-items: center;
     column-gap: 4px;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .link-item {
