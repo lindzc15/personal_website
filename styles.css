@@ -380,10 +380,9 @@ a:hover {
     .separator-line {
         border-top: 3px solid var(--dark-brown);
         border-radius: 2px;
-        width: 75vw;
+        width: 100vw;
         position: relative;
         top: 10%;
-        left: 12.5%;
         margin-bottom: 2rem;
     }
 
