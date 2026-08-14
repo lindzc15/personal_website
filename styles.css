@@ -153,7 +153,6 @@ h1, h2, h3, h4, h5 {
     align-items: center;
     column-gap: 4px;
     padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .link-item {
@@ -276,7 +275,7 @@ a:hover {
 }
 
 .desc-list {
-    margin-top: 0px;
+    margin-top: 10px;
 }
 
 #success-alert-div {
