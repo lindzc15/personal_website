@@ -103,4 +103,19 @@ function displayDynamicContent() {
 }
 
 
+// change the active project and change project body to correct project
+function setActiveProject(e) {
+    const projectOptions = document.getElementsByClassName("project-nav-item");
+
+    for (const nav of projectOptions) {
+        nav.classList.remove("active-project-nav");
+    }
+
+    e.classList.add("active-project-nav");
+
+
+    // displayDynamicContent();
+}
+
+
 
