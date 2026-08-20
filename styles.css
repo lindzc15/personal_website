@@ -40,11 +40,14 @@ h1, h2, h3, h4, h5 {
 
 #static-content {
     grid-area: static;
-    margin-right: 1rem;
+    margin: 8rem 1rem 8rem 1rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-right: 3px solid var(--dark-brown);
+    border-radius: 2px;
+    
 }
 
 #dynamic-content {
@@ -66,7 +69,7 @@ h1, h2, h3, h4, h5 {
 #content {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
         "static dynamic";
@@ -216,6 +219,7 @@ button:hover {
     row-gap: 0.5rem;
     margin-top: 1.25rem;
     font-size: 1.25rem;
+    margin-left: 0.75rem;
 }
 
 .nav-item {
@@ -236,6 +240,19 @@ button:hover {
   height: 1.5rem;
   flex-shrink: 0;
 }
+
+#projects-nav{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+}
+
+.project-nav-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 50%;
+}
+
 
 
 /* ELEMENT STYLING */
@@ -377,21 +394,18 @@ a:hover {
         height: auto;
     }
 
-    .separator-line {
-        border-top: 3px solid var(--dark-brown);
-        border-radius: 2px;
-        width: 100vw;
-        position: relative;
-        top: 10%;
-        margin-bottom: 2rem;
-    }
-
     #dynamic-content {
         margin-left: 0px;
     }
 
     #static-content {
-        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        border-bottom: 3px solid var(--dark-brown);
+        border-radius: 2px;
+        border-right: none;
     }
 
     #static-body {
@@ -399,17 +413,4 @@ a:hover {
     }
 } 
 
-/* FOR LARGER SCREENS, SET SEPARATOR BETWEEN MAIN COLUMNS */
-
-@media screen and (min-width: 785px) {
-    .separator-line {
-        border-left: 3px solid var(--dark-brown);
-        border-radius: 2px;
-        height: 75vh;
-        position: absolute;
-        left: 50%;
-        top: 12.5%
-    }
-
-}
 
