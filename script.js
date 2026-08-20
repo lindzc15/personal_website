@@ -114,8 +114,22 @@ function setActiveProject(e) {
     e.classList.add("active-project-nav");
 
 
-    // displayDynamicContent();
+    displayProject();
 }
 
+
+function displayProject() {
+    const activeProject = document.getElementsByClassName("active-project-nav");
+
+    const projectContainerElements = document.getElementsByClassName("project-container");
+    for (const project of projectContainerElements) {
+        if(project.id == `${activeProject[0].id}-project`) {
+            project.style.display = "block";
+        }
+        else {
+            project.style.display = "none";
+        }
+    }
+}
 
 
