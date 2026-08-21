@@ -153,6 +153,7 @@ h1, h2, h3, h4, h5 {
 
 .sub-container {
     margin-left: 1rem;
+    margin-bottom: 2rem;
 }
 
 .links-container {
@@ -265,6 +266,7 @@ button:hover {
     flex-direction: column;
     font-size: 1.25rem;
     align-items: flex-start;
+    margin-bottom: 4rem;
 }
 
 .project-nav-item {
@@ -288,7 +290,7 @@ button:hover {
 
 
 /* ELEMENT STYLING */
-img {
+#headshot-image {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
@@ -344,6 +346,28 @@ a:hover {
     border: none;
     padding-top: 0.5rem;
     visibility: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  box-shadow: 4px 4px 8px var(--dark-brown-opaque);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mobile-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 800px;
+    column-gap: 30px;
+    row-gap: 40px;
+}
+
+.mobile-image {
+    height: 100%;
+    width: auto;
 }
 
 
